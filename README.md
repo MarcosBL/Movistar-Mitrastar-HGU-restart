@@ -17,7 +17,7 @@ chmod +x router_restart.sh
 ./router_restart.sh
 ````
 
-# Copy & paste / comando corto para interfaces incómodas
+# Copy & paste / comando corto
 
 ````bash
 curl -sSL https://t.ly/QMDEX | bash
