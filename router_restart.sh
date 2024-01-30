@@ -12,7 +12,7 @@ auth="$router_user:$router_password"
 session_file="/tmp/mitracookies.txt"
 
 # Comprobar dependencia de curl
-readonly CURL_PATH="$(command -v curl || echo '/usr/bin/curl')"
+readonly CURL_PATH="$(command -v curl)"
 if [[ ! -x "$CURL_PATH" ]]; then
     echo "Error: curl no encontrado. Por favor, asegúrate de que curl esté instalado y en tu PATH."
     exit 1
