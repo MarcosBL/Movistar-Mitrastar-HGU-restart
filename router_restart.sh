@@ -10,7 +10,13 @@ router_user='1234'
 host="http://$router_ip"
 auth="$router_user:$router_password"
 session_file="/tmp/mitracookies.txt"
+
+# Comprobar dependencia de curl
 readonly CURL_PATH="$(command -v curl || echo '/usr/bin/curl')"
+if [[ ! -x "$CURL_PATH" ]]; then
+    echo "Error: curl no encontrado. Por favor, asegúrate de que curl esté instalado y en tu PATH."
+    exit 1
+fi
 
 echo "Iniciando sesión y obteniendo cookies..."
 sessionKey=$(echo -n "$auth" | base64)
